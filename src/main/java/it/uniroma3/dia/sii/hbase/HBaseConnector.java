@@ -28,24 +28,33 @@ public class HBaseConnector {
         wrapper.addRecord(tableName,"9","automazione","FDA","user9");
         wrapper.addRecord(tableName,"10","automazione","RO","user10");
 
-        System.out.println("********************************");
-        System.out.println("Tutte le persone di informatica");
+        System.out.println("_________________________________");
+        System.out.println();
+        System.out.println("Tutte le persone di informatica:");
 
         for (RowBean row:wrapper.scanByColumnFamily(tableName,"informatica"))
         {
             System.out.println(row.toString());
         }
-        System.out.println("********************************");
+        System.out.println("_________________________________");
 
-        System.out.println("Tutte le persone di informatica del gruppo di ricerca di basi di dati");
+        System.out.println();
+        System.out.println();
+
+        System.out.println("_________________________________");
+        System.out.println();
+        System.out.println("Tutte le persone di informatica del gruppo di ricerca di basi di dati:");
 
         for (RowBean row:wrapper.scanByColumnQualifier(tableName,"informatica","BD"))
         {
             System.out.println(row.toString());
         }
+        System.out.println("_________________________________");
+
+        System.out.println();
+        System.out.println();
 
         wrapper.deleteTable("dia");
-        System.out.println("********************************");
 
 
 
