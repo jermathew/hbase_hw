@@ -14,11 +14,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HBaseWrapper {
+
+    private Configuration config;
+
+    public HBaseWrapper(){
+        this.config= HBaseConfiguration.create();
+    }
+
     public void addRecord(String tableName,String rowKey, String family,String qualifier,String value) throws Exception{
-        // instantiate Configuration class
-        Configuration config = HBaseConfiguration.create();
         // instantiate HTable class
-        HTable hTable = new HTable(config, tableName);
+        HTable hTable = new HTable(this.config, tableName);
         // instantiate Put class
         Put p = new Put(Bytes.toBytes(rowKey));
         // add values using add() method
@@ -29,8 +34,7 @@ public class HBaseWrapper {
     }
 
     public void delRecord(String tableName,String rowKey) throws IOException{
-        Configuration conf = HBaseConfiguration.create();
-        HTable table = new HTable(conf, tableName);
+        HTable table = new HTable(this.config, tableName);
 
         // instantiate Delete class
         Delete delete = new Delete(Bytes.toBytes(rowKey));
@@ -42,8 +46,7 @@ public class HBaseWrapper {
     }
 
     public RowBean getOneRecord(String tableName, String rowKey) throws IOException{
-        Configuration config = HBaseConfiguration.create();
-        HTable table = new HTable(config, tableName);
+        HTable table = new HTable(this.config, tableName);
 
         // instantiate Get class
         Get g = new Get(Bytes.toBytes(rowKey));
@@ -64,8 +67,7 @@ public class HBaseWrapper {
     }
 
     public List<RowBean> scanByColumnFamily(String tableName,String familyName) throws IOException {
-        Configuration config = HBaseConfiguration.create();
-        HTable table = new HTable(config, tableName);
+        HTable table = new HTable(this.config, tableName);
 
         // instantiate the Scan class
         Scan scan = new Scan();
@@ -87,8 +89,7 @@ public class HBaseWrapper {
     }
 
     public List<RowBean> scanByColumnQualifier(String tableName,String familyName, String qualifier) throws IOException {
-        Configuration config = HBaseConfiguration.create();
-        HTable table = new HTable(config, tableName);
+        HTable table = new HTable(this.config, tableName);
 
         // instantiate the Scan class
         Scan scan = new Scan();
@@ -128,11 +129,9 @@ public class HBaseWrapper {
     }
 
     public void deleteTable(String tableName) throws IOException {
-        // Instantiating configuration class
-        Configuration conf = HBaseConfiguration.create();
 
         // Instantiating HBaseAdmin class
-        HBaseAdmin admin = new HBaseAdmin(conf);
+        HBaseAdmin admin = new HBaseAdmin(this.config);
 
         admin.disableTable(tableName);
 
