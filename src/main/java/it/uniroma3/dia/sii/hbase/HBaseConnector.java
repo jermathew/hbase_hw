@@ -16,6 +16,7 @@ public class HBaseConnector {
         family.add("automazione");
         String tableName="dia";
         wrapper.createTable(tableName,family);
+
         wrapper.addRecord(tableName,"1","informatica","IA","user1");
         wrapper.addRecord(tableName,"2","informatica","IA","user2");
         wrapper.addRecord(tableName,"3","informatica","BD","user3");
@@ -27,10 +28,16 @@ public class HBaseConnector {
         wrapper.addRecord(tableName,"9","automazione","FDA","user9");
         wrapper.addRecord(tableName,"10","automazione","RO","user10");
 
+        System.out.println("********************************");
+        System.out.println("Tutte le persone di informatica");
+
         for (RowBean row:wrapper.scanByColumnFamily(tableName,"informatica"))
         {
             System.out.println(row.toString());
         }
+        System.out.println("********************************");
+
+        System.out.println("Tutte le persone di informatica del gruppo di ricerca di basi di dati");
 
         for (RowBean row:wrapper.scanByColumnQualifier(tableName,"informatica","BD"))
         {
@@ -38,6 +45,7 @@ public class HBaseConnector {
         }
 
         wrapper.deleteTable("dia");
+        System.out.println("********************************");
 
 
 

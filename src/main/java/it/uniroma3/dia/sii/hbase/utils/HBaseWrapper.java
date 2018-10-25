@@ -79,7 +79,7 @@ public class HBaseWrapper {
         ResultScanner scanner = table.getScanner(scan);
         List<RowBean> listOfRows= new ArrayList<>();
         for (Result result = scanner.next(); result != null; result=scanner.next()){
-            System.out.println("Found row : " + result);
+            //System.out.println("Found row : " + result);
             RowBean row= parseResult(result,new String(result.getRow()));
             listOfRows.add(row);
         }
@@ -101,7 +101,7 @@ public class HBaseWrapper {
         ResultScanner scanner = table.getScanner(scan);
         List<RowBean> listOfRows= new ArrayList<>();
         for (Result result = scanner.next(); result != null; result=scanner.next()){
-            System.out.println("Found row : " + result);
+            //System.out.println("Found row : " + result);
             RowBean row= parseResult(result,new String(result.getRow()));
             listOfRows.add(row);
         }
