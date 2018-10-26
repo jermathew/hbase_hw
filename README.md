@@ -17,14 +17,14 @@ Homework for [Sistemi Intelligenti per Internet](https://sites.google.com/site/s
 	cd hbase_hw/
 	```
 6. 
-  - (For Mac and Linux) Run the following command 
-	```
-	./gradlew build run
-	```
-  - (For Windows) Run the following command 
-	```
-	gradlew.bat build run
-	```
+	- (For Mac and Linux) Run the following command 
+		```
+		./gradlew build run
+		```
+	- (For Windows) Run the following command 
+		```
+		gradlew.bat build run
+		```
 
 
 ## Contributors
