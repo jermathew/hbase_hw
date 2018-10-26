@@ -1,10 +1,10 @@
-#HBase Homework
+# HBase Homework
 [![License: MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://opensource.org/licenses/MIT)
 
 
 Homework for [Sistemi Intelligenti per Internet](https://sites.google.com/site/sistemiintelligentiperinternet/) course at [Roma Tre University](http://www.uniroma3.it).
 
-##Getting Started
+## Getting Started
 1. Download, install and setup [Java](https://www.java.com/it/download/)
 2. Install and setup [HBase](https://www.apache.org/dyn/closer.lua/hbase/hbase-1.2.8/hbase-1.2.8-bin.tar.gz).
 3. Start HBase
@@ -27,10 +27,10 @@ Homework for [Sistemi Intelligenti per Internet](https://sites.google.com/site/s
 	```
 
 
-##Contributors
+## Contributors
 - [Jerin George Mathew](http://github.com/jgeorgemathew)
 - [Luca Pasquini](https://github.com/lucapas)
 
 
-##License
+## License
 This project is licensed under the MIT licence. See LICENCE.md file for details.
